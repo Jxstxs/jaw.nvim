@@ -1,3 +1,15 @@
+local requirements = {
+    "plenary",
+}
+
+for _, requirement in ipairs(requirements) do
+    local status, _ = pcall(require, requirement)
+    if not status then
+        vim.api.nvim_notify("[jaw] requirement: " .. requirement .. " is not satisfied", 0, {})
+        return nil
+    end
+end
+
 local M = {
     -- Configuration related
     config = require("jaw.config").config,
