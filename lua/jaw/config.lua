@@ -1,6 +1,50 @@
 local M = {}
 
+M.ENUMS = {
+    ALWAYS = 1,
+    PROMPT = 2,
+    NEVER = 3,
+    CHOICE_CHECK_PRO = 4,
+    CHOICE_CHECK_CON = 5,
+    CHOICE_CHECK_NONE = 6,
+}
+
 M.config = {
+    system = {
+        ["wiki-new"] = {
+            input = {
+                prompt = "Path to new Wiki: ",
+                default = vim.loop.cwd() .. "/",
+            },
+            output = {
+                no_input = "[jaw] Aborting.. no input given",
+                error = function()
+                    print "[jaw] Failed to create Wiki"
+                end,
+                stdout = function()
+                    print "[jaw] Created Wiki successful"
+                end,
+            },
+        },
+    },
+
+    -- wikiNew related
+    -- Options: always,prompt,never
+    create_git_repo = M.ENUMS.ALWAYS,
+
+    -- the Shell command to run the Template file
+    shell = "sh",
+
+    -- the Script which creates the base structure
+    new_wiki_template = os.getenv("HOME") .. "/wiki_template.sh",
+
+    -- Utils related
+    choices = {
+        ["wiki-new"] = {
+            pro = {},
+            con = {},
+        },
+    },
 }
 
 -- Configures Jaw
@@ -9,3 +53,4 @@ M.setup = function(opts)
     vim.tbl_deep_extend("force", M.config, opts)
 end
 
+return M
