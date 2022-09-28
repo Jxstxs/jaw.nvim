@@ -29,6 +29,10 @@ M.new = function()
                 print "[jaw] Aborting.. not Implemented yet"
                 return
             end
+            -- check if it exists
+            if utils.checkPath(input) ~= true then
+                local cgr = config.create_git_repo
+                local cmd, args = nil, nil
 
             if cgr == e.ALWAYS then
                 cmd = "git"
