@@ -16,10 +16,10 @@ local M = {
     setup = require("jaw.config").setup,
 
     -- Wiki related
-    new = require("jaw.wiki").new,
-    use = require("jaw.wiki").use,
-    add = require("jaw.wiki").add,
-    export = require("jaw.wiki").export,
+    wikiNew = require("jaw.wiki").new,
+    wikiUse = require("jaw.wiki").use,
+    wikiAdd = require("jaw.wiki").add,
+    wikiExport = require("jaw.wiki").export,
 
     -- History related
     historySet = require("jaw.history").set,
