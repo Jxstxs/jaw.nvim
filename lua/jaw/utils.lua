@@ -1,5 +1,7 @@
 local M = {}
 
+local path = require("plenary.path")
+
 local config = require("jaw.config").config
 local e = require("jaw.config").ENUMS
 
@@ -17,6 +19,10 @@ M.checkChoice = function(choices, choice)
     end
 
     return e.CHOICE_CHECK_NONE
+end
+
+M.checkPath = function (_path)
+    return path:new(_path):exists()
 end
 
 return M

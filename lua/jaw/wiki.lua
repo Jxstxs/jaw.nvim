@@ -2,7 +2,7 @@ local M = {}
 
 local config = require("jaw.config").config
 local e = require("jaw.config").ENUMS
--- local utils = require "jaw.utils"
+local utils = require "jaw.utils"
 
 local Job = require "plenary.job"
 
