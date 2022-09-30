@@ -21,7 +21,10 @@ M.checkChoice = function(choices, choice)
     return e.CHOICE_CHECK_NONE
 end
 
-M.checkPath = function (_path)
+-- Checks if a Path exists
+-- @param _path: string: path to check
+-- @return bool: true when exists; false when not
+M.checkPath = function(_path)
     return path:new(_path):exists()
 end
 
