@@ -28,4 +28,16 @@ M.checkPath = function(_path)
     return path:new(_path):exists()
 end
 
+-- checks if a line only contains spaces
+-- @param line: string: line to check for
+-- @retun bool: true when only spaces; false when not
+M.checkTodoLine = function(line)
+    for i = 1, #line, 1 do
+        if line[i] ~= " " then
+            return false
+        end
+    end
+    return true
+end
+
 return M
