@@ -27,6 +27,9 @@ M.config = {
                 end,
             },
         },
+        ["todo-insert"] = {
+            template = "- [ ] %s",
+        }
     },
 
     -- wikiNew related
