@@ -25,7 +25,7 @@ Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
 ```lua
 use { "Jxstxs/jaw.nvim" }
 ```
-    
+
 ## Contributing
 
 Contributions are always welcome! Just remember to be Kind
