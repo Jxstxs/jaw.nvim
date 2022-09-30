@@ -1,0 +1,103 @@
+*jaw*
+==============================================================================
+CONTENTS                                                        *jaw-contents*
+
+    INTRO .......................................... |jaw-intro|
+    CONFIGURATION .................................. |jaw-configuration|
+    FUNCTIONS ...................................... |jaw-functions|
+    DEFAULTS ....................................... |jaw-defaults|
+
+==============================================================================
+INTRO                                                              *jaw-intro*
+
+Jaw (Just another Wiki) is a Markdown Based Notetaking system with alot of 
+useful Features, which i use to take Notes in School.
+
+==============================================================================
+CONFIGURATION                                              *jaw-configuration*
+
+config:
+
+==============================================================================
+FUNCTIONS                                                      *jaw-functions*
+
+setup({opts})
+    Should be run before any other jaw related functions to setup the plugin
+    Parameters:
+        {opts} see Configuration to see all available Options
+
+                                                                 *jaw-wikinew*
+wikiNew()
+    creates a new Wiki at the given Path. The structure of the Wiki is defined
+    in wiki-template.sh
+
+wikiUse
+wikiAdd
+wikiExport
+
+historySet
+historyMove
+historyClear
+
+linkInsert
+linkFollow
+
+gotoPage
+gotoHeading
+gotoLink
+gotoTag
+
+tagInsert
+
+todoInsert()
+    makes the current or selected text to a Markdown Todo entry
+
+todoToggle
+
+selectHistory
+selectLink
+selectTag
+
+==============================================================================
+DEFAULTS                                                        *jaw-defaults*
+
+The Default Configuration
+
+ 
+require("jaw").config({
+    system = {
+        ["wiki-new"] = {
+            input = {
+                prompt = "Path to new Wiki: ",
+                default = vim.loop.cwd() .. "/",
+            },
+            output = {
+                ath_exists = "[jaw] Aborting.. Path already exists",
+                no_input = "[jaw] Aborting.. no input given",
+                error = function()
+                    print "[jaw] Failed to create Wiki"
+                end,
+                stdout = function()
+                    print "[jaw] Created Wiki successful"
+                end,
+            },
+        },
+        ["todo-insert"] = {
+            template = "- [ ] %s",
+        }
+    },
+    create_git_repo = M.ENUMS.ALWAYS,
+    shell = "sh",
+    new_wiki_template = "/home/julius/.gits/personal/nvim-plugs/jaw.nvim/wn/wiki-template.sh",
+    choices = {
+        ["wiki-new"] = {
+            pro = {},
+            con = {},
+        },
+    },
+})
+<
+
+==============================================================================
+
+vim:tw=78:sw=4:ts=8:ft=help:norl:
