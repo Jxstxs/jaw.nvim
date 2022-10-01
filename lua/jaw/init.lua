@@ -16,7 +16,7 @@ local M = {
     setup = require("jaw.config").setup,
 
     -- Wiki related
-    wikiNew = require("jaw.wiki").new,
+    wikiNew = require("jaw.wiki").new, -- done
     wikiUse = require("jaw.wiki").use,
     wikiAdd = require("jaw.wiki").add,
     wikiExport = require("jaw.wiki").export,
@@ -40,7 +40,7 @@ local M = {
     tagInsert = require("jaw.tag").insert,
 
     -- Todo related
-    todoInsert = require("jaw.todo").insert,
+    todoInsert = require("jaw.todo").insert, -- done
     todoToggle = require("jaw.todo").toggle,
 
     -- Select related
