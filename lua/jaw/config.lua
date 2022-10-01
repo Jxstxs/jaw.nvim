@@ -17,7 +17,7 @@ M.config = {
                 default = vim.loop.cwd() .. "/",
             },
             output = {
-                ath_exists = "[jaw] Aborting.. Path already exists",
+                path_exists = "[jaw] Aborting.. Path already exists",
                 no_input = "[jaw] Aborting.. no input given",
                 error = function()
                     print "[jaw] Failed to create Wiki"
