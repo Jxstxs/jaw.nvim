@@ -4,7 +4,8 @@ local config = require("jaw.config").config
 local utils  = require("jaw.utils")
 local todo_utils = require("jaw.utils.todo")
 
-M.insert = function()
+M.insert = function(state)
+    state = state or " "
     local lines = utils.getVisualSelection()
 
     -- check if the table is empty
@@ -12,7 +13,7 @@ M.insert = function()
     if lines[1][1] ~= 0 and lines[1][2] ~= {} then
         for _, value in ipairs(lines) do
             if not utils.checkEmptyLine(value[2][1]) then
-                vim.fn.setline(value[1], string.format(config.system["todo"].template, value[2][1]))
+                vim.fn.setline(value[1], string.format(config.system["todo"].template, state, value[2][1]))
             end
         end
         -- clear the marks
@@ -21,7 +22,7 @@ M.insert = function()
     else
         -- gets the current line and sets it
         local current_line = vim.api.nvim_get_current_line()
-        vim.api.nvim_set_current_line(string.format(config.system["todo"].template, current_line))
+        vim.api.nvim_set_current_line(string.format(config.system["todo"].template, state, current_line))
     end
 end
 
