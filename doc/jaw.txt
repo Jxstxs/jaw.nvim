@@ -5,6 +5,7 @@ CONTENTS                                                        *jaw-contents*
     INTRO .......................................... |jaw-intro|
     CONFIGURATION .................................. |jaw-configuration|
     FUNCTIONS ...................................... |jaw-functions|
+    UTILS .......................................... |jaw-utils|
     DEFAULTS ....................................... |jaw-defaults|
 
 ==============================================================================
@@ -21,6 +22,7 @@ config:
 ==============================================================================
 FUNCTIONS                                                      *jaw-functions*
 
+                                                                 *jaw-setup*
 setup({opts})
     Should be run before any other jaw related functions to setup the plugin
     Parameters:
@@ -49,14 +51,39 @@ gotoTag
 
 tagInsert
 
-todoInsert()
+
+                                                                 *jaw-todoinsert*
+todoInsert({state})
     makes the current or selected text to a Markdown Todo entry
 
-todoToggle
+    Opts:
+        state:  character
+            which character will be placed into the template
+
+                                                                 *jaw-todotoggle*
+todoToggle()
+    toggles the state of the todo line
 
 selectHistory
 selectLink
 selectTag
+
+==============================================================================
+UTILS                                                              *jaw-utils*
+
+The Utils Functions for Jaw
+
+utils.checkChoice
+utils.checkPath
+utils.checkEmptyLine
+utils.getVisualSelection
+utils.splitLineBy
+utils.sliceTable
+
+                                                                 *jaw-todoutils*
+todo-utils.checkTodoState
+todo-utils.checkTodoLine
+todo-utils.parseTodoState
 
 ==============================================================================
 DEFAULTS                                                        *jaw-defaults*
