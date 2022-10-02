@@ -22,7 +22,7 @@ config:
 ==============================================================================
 FUNCTIONS                                                      *jaw-functions*
 
-                                                                 *jaw-setup*
+                                                                   *jaw-setup*
 setup({opts})
     Should be run before any other jaw related functions to setup the plugin
     Parameters:
@@ -52,7 +52,7 @@ gotoTag
 tagInsert
 
 
-                                                                 *jaw-todoinsert*
+                                                              *jaw-todoinsert*
 todoInsert({state})
     makes the current or selected text to a Markdown Todo entry
 
@@ -60,7 +60,7 @@ todoInsert({state})
         state:  character
             which character will be placed into the template
 
-                                                                 *jaw-todotoggle*
+                                                              *jaw-todotoggle*
 todoToggle()
     toggles the state of the todo line
 
@@ -80,7 +80,7 @@ utils.getVisualSelection
 utils.splitLineBy
 utils.sliceTable
 
-                                                                 *jaw-todoutils*
+                                                               *jaw-todoutils*
 todo-utils.checkTodoState
 todo-utils.checkTodoLine
 todo-utils.parseTodoState
