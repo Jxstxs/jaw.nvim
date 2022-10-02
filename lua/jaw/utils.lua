@@ -54,4 +54,14 @@ M.getVisualSelection = function()
     return lines
 end
 
+-- checks the state of the todo
+-- @param line: string: the string to check for the state
+-- @return int: e.TODO_STATE_CHECKED when its checked; e.TODO_STATE_NON_CHECKED when not; -1 when both not found
+M.checkTodoState = function(line)
+    if string.match(line, config.system["todo"].matching.checked) then return e.TODO_STATE_CHECKED
+    elseif string.match(line, config.system["todo"].matching.non_checked) then return e.TODO_STATE_NON_CHECKED
+    else return -1
+    end
+end
+
 return M
