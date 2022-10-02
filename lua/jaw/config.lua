@@ -7,6 +7,8 @@ M.ENUMS = {
     CHOICE_CHECK_PRO = 4,
     CHOICE_CHECK_CON = 5,
     CHOICE_CHECK_NONE = 6,
+    TODO_STATE_CHECKED = 7,
+    TODO_STATE_NON_CHECKED = 8,
 }
 
 M.config = {
