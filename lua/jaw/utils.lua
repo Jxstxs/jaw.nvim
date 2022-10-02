@@ -75,4 +75,38 @@ M.checkTodoLine = function(line)
     return false
 end
 
+-- splits a string by pattern
+-- @param line: string: the string to split
+-- @param pattern: string: the pattern to split the string
+-- @return table: the splitted string
+M.splitLineBy = function(line, pattern)
+    local splits = {}
+    for split in string.gmatch(line, pattern) do
+        table.insert(splits, split)
+    end
+
+    return splits
+end
+
+-- slices a table from _start to _end
+-- @param tbl: table: the table to slice
+-- @param _start: int: the starting position of the slice
+-- @param _end: int: the end position of the slice
+-- @return table: the sliced table
+M.sliceTable = function(tbl, _start, _end)
+    _start = _start or 1
+    _end = _end or #tbl
+
+    if _start >= _end then return nil end
+
+    local slice = {}
+    for index, value in ipairs(tbl) do
+        if index >= _start and index <= _end then
+            table.insert(slice, value)
+        end
+    end
+
+    return slice
+end
+
 return M
