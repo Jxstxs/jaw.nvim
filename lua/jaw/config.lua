@@ -29,8 +29,8 @@ M.config = {
                 end,
             },
         },
-        ["todo-insert"] = {
-            template = "- [ ] %s",
+        ["todo"] = {
+            template = "- [%s] %s",
         }
     },
 

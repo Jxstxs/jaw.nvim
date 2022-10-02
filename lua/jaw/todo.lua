@@ -18,8 +18,8 @@ M.insert = function()
     -- TODO: better non visual selection check
     if lines[1][1] ~= 0 and lines[1][2] ~= {} then
         for _, value in ipairs(lines) do
-                vim.fn.setline(value[1], string.format(config.system["todo-insert"].template, value[2][1]))
             if not utils.checkEmptyLine(value[2][1]) then
+                vim.fn.setline(value[1], string.format(config.system["todo"].template, value[2][1]))
             end
         end
         -- clear the marks
@@ -28,7 +28,7 @@ M.insert = function()
     else
         -- gets the current line and sets it
         local current_line = vim.api.nvim_get_current_line()
-        vim.api.nvim_set_current_line(string.format(config.system["todo-insert"].template, current_line))
+        vim.api.nvim_set_current_line(string.format(config.system["todo"].template, current_line))
     end
 end
 
