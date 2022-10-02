@@ -7,6 +7,8 @@ M.ENUMS = {
     CHOICE_CHECK_PRO = 4,
     CHOICE_CHECK_CON = 5,
     CHOICE_CHECK_NONE = 6,
+    TODO_STATE_CHECKED = 7,
+    TODO_STATE_NON_CHECKED = 8,
 }
 
 M.config = {
@@ -17,7 +19,7 @@ M.config = {
                 default = vim.loop.cwd() .. "/",
             },
             output = {
-                ath_exists = "[jaw] Aborting.. Path already exists",
+                path_exists = "[jaw] Aborting.. Path already exists",
                 no_input = "[jaw] Aborting.. no input given",
                 error = function()
                     print "[jaw] Failed to create Wiki"
@@ -27,8 +29,13 @@ M.config = {
                 end,
             },
         },
-        ["todo-insert"] = {
-            template = "- [ ] %s",
+        ["todo"] = {
+            checked_symbol = "x",
+            matching = {
+                non_checked = "%p%s%p",
+                checked = "%p%a%p"
+            },
+            template = "- [%s] %s",
         }
     },
 
