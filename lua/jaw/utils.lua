@@ -40,7 +40,7 @@ M.checkEmptyLine = function(line)
     return true
 end
 
-M.getVisualSelection = function ()
+M.getVisualSelection = function()
     -- get the start and end position of the selection
     local start_selection = vim.api.nvim_buf_get_mark(0, "<")[1] -- - 1
     local end_selection = vim.api.nvim_buf_get_mark(0, ">")[1]
