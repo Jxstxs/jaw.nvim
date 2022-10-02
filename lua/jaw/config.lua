@@ -30,6 +30,11 @@ M.config = {
             },
         },
         ["todo"] = {
+            checked_symbol = "x",
+            matching = {
+                non_checked = "%p%s%p",
+                checked = "%p%a%p"
+            },
             template = "- [%s] %s",
         }
     },
