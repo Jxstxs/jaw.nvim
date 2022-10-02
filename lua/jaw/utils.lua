@@ -64,4 +64,15 @@ M.checkTodoState = function(line)
     end
 end
 
+-- checks if a line is a markdown todo (github falvour)
+-- @param: string: the string to check if it contains an todo
+-- @return bool: true when found; false when not
+M.checkTodoLine = function(line)
+    -- TODO: implement better ceck
+    if M.checkTodoState(line) ~= -1 then
+        return true
+    end
+    return false
+end
+
 return M
