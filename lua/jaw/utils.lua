@@ -75,6 +75,25 @@ M.checkTodoLine = function(line)
     return false
 end
 
+-- decides where to star the slice and which text to put into the template
+-- @param state: int: the state of the current todo line
+-- @return int: where to start the slice
+-- @return string: which character to put inside the template
+M.parseTodoState = function(state)
+    local start
+    local state_text
+
+    if state == e.TODO_STATE_CHECKED then
+        start = 3
+        state_text = " "
+    elseif state == e.TODO_STATE_NON_CHECKED then
+        start = 4
+        state_text = config.system["todo"].checked_symbol
+    end
+
+    return start, state_text
+end
+
 -- splits a string by pattern
 -- @param line: string: the string to split
 -- @param pattern: string: the pattern to split the string
