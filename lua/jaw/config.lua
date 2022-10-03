@@ -48,7 +48,7 @@ M.config = {
 
     -- the Script which creates the base structure
     -- new_wiki_template = os.getenv("HOME") .. "/wiki_template.sh",
-    new_wiki_template = "/home/julius/.gits/personal/nvim-plugs/jaw.nvim/wn/wiki-template.sh",
+    new_wiki_template = "/home/julius/.gits/personal/nvim-plugs/jaw.nvim/mn/wiki-template.sh",
 
     -- Utils related
     choices = {
