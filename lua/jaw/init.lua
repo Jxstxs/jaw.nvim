@@ -41,7 +41,7 @@ local M = {
 
     -- Todo related
     todoInsert = require("jaw.todo").insert, -- done
-    todoToggle = require("jaw.todo").toggle,
+    todoToggle = require("jaw.todo").toggle, -- done
 
     -- Select related
     selectHistory = require("jaw.select").history,
