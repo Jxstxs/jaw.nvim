@@ -1,5 +1,7 @@
 local M = {}
 
+local key_utils = require("jaw.utils.keybindings")
+
 M.ENUMS = {
     ALWAYS = 1,
     PROMPT = 2,
@@ -57,12 +59,45 @@ M.config = {
             con = {},
         },
     },
+
+    -- Keybindings
+    setup_default_keys = true,
+    key_opts = {},
+    keys = {
+        -- Wiki related
+        {
+            -- Creates new Wiki
+            modes = { "n" },
+            lhs = "<leader>jwn",
+            rhs = "require('jaw').wikiNew()"
+        },
+
+        -- Todo related
+        {
+            -- Inserts a Markdown Todo
+            modes = { "n", "v" },
+            lhs = "<leader>jti",
+            rhs = "lua require('jaw').todoInsert()"
+        },
+        {
+            -- Toggles an Markdown Todo
+            modes = { "n", "v" },
+            lhs = "<leader>jtt",
+            rhs = "lua require('jaw').todoToggle()"
+        },
+    }
 }
 
 -- Configures Jaw
 -- @param opts[table]: the personal configuration
 M.setup = function(opts)
-    vim.tbl_deep_extend("force", M.config, opts)
+    M.config = vim.tbl_deep_extend("force", M.config, opts)
+
+    if M.config.setup_default_keys then
+        for _, value in ipairs(key_utils.returnAvailableKeys(M.config.keys)) do
+            key_utils.setKeys(value)
+        end
+    end
 end
 
 return M
