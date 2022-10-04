@@ -11,6 +11,9 @@ M.ENUMS = {
     CHOICE_CHECK_NONE = 6,
     TODO_STATE_CHECKED = 7,
     TODO_STATE_NON_CHECKED = 8,
+    TELESCOPE_INPUT = 9,
+    VIM_INPUT = 10,
+    NONE_INPUT = 11,
 }
 
 M.config = {
@@ -38,6 +41,11 @@ M.config = {
                 checked = "%p%a%p"
             },
             template = "- [%s] %s",
+        },
+        ["link"] = {
+            template = "[%s](%s)",
+            check_pattern = "",
+            already_link = "[jaw] Aborting... Line is already a Link"
         }
     },
 
