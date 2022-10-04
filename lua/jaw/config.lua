@@ -46,12 +46,22 @@ M.config = {
             template = "[%s](%s)",
             check_pattern = "",
             already_link = "[jaw] Aborting... Line is already a Link"
+        },
+        ["get-path"] = {
+            input = {
+                prompt = "Path for the Link: ",
+                default = vim.loop.cwd() .. "/",
+            },
         }
     },
 
     -- wikiNew related
     -- Options: always,prompt,never
     create_git_repo = M.ENUMS.ALWAYS,
+
+    -- linkInsert related
+    -- Options: telescope, vim, none
+    select_path = M.ENUMS.VIM_INPUT,
 
     -- the Shell command to run the Template file
     shell = "sh",
